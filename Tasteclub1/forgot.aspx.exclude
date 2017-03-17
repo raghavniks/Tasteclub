@@ -1,0 +1,63 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="forgot.aspx.cs" Inherits="forgot" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .style1
+        {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body style="background-color:#f0f0f0">
+    <form id="form1" runat="server">
+    <div>
+        <div style="background-color:White; height:125px; margin-bottom:7px;">
+        <div style="float:right; margin-right:-75px; width:700px;">
+             <div style="float:left; margin-right:70px; margin-top:50px; font-size:18px;">
+                Group Orders
+            </div>
+            <div style="float:left; margin-right:70px; margin-top:50px; font-size:18px;" >
+                Login
+            </div>
+            <a href="">
+            <div style="float:left; height:20px; width:185px; margin-top:35px; color:White; border-radius:5px; background-color:Red; padding:15px 0px 15px 30px;" 
+                 class="style1">
+               <a href="signup.aspx">Order Lunch Today</a> 
+            </div>
+            </a>
+             
+        </div>
+           
+        </div>
+        <div style="height:400px; width:1000px; background-color:White; margin:0px auto;">
+          <div style="padding:20px 0px 0px 20px; font-size:18px;">
+                <asp:Label ID="Label3" runat="server" Text="" 
+                    style="color: #CC3300; font-weight: 700"></asp:Label>
+        </div>
+        <div style="padding:10px 0px 20px 20px; font-size:18px;">
+                <asp:Label ID="Label1" runat="server" Text="Please enter your email and we'll send you a link to reset your password."></asp:Label>
+        </div>
+         <div style="padding:0px 0px 20px 20px;">
+             <asp:Label ID="Label2" runat="server" Text="Email"></asp:Label>
+            &nbsp;&nbsp;
+            <asp:TextBox ID="TextBox1" runat="server" Height="24px" Width="151px" 
+                 style="border-radius:5px;" BorderColor="Gray" BorderStyle="Solid" 
+                 BorderWidth="1px"></asp:TextBox>
+        </div>
+        <div style="padding-left:20px; ">
+            <asp:Button ID="Button1" runat="server" Text="Send" Height="30px" 
+                Width="75px" BackColor="Red" ForeColor="White" BorderColor="Red" 
+                BorderStyle="Solid" BorderWidth="1px" style="border-radius:5px;" 
+                onclick="Button1_Click"/>
+        </div>
+        </div>
+       
+    </div>
+    </form>
+</body>
+</html>

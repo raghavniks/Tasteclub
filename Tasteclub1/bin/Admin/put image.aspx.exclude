@@ -1,0 +1,32 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="~/Admin/put image.aspx.cs" Inherits="put_image" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:FileUpload ID="FileUpload1" runat="server" /><br />
+        <asp:TextBox ID="TextBox1" runat="server" placeholder="item name"></asp:TextBox><br /> 
+        <asp:TextBox ID="TextBox2" runat="server" placeholder="company name"></asp:TextBox><br />
+        <asp:TextBox ID="TextBox3" runat="server" placeholder="rupees" ></asp:TextBox><br />
+        <asp:DropDownList ID="DropDownList1" runat="server" Height="25px" Width="131px">
+            <asp:ListItem>Yes</asp:ListItem>
+            <asp:ListItem>No</asp:ListItem>
+        </asp:DropDownList><br />
+        <asp:DropDownList ID="DropDownList2" runat="server" Height="25px" Width="130px">
+            <asp:ListItem>Monday</asp:ListItem>
+            <asp:ListItem>Tuesday</asp:ListItem>
+            <asp:ListItem>Wednesday</asp:ListItem>
+            <asp:ListItem>Thursday</asp:ListItem>
+            <asp:ListItem>Friday</asp:ListItem>
+            <asp:ListItem>Saturday</asp:ListItem>
+        </asp:DropDownList><br />
+        <asp:Button ID="Button1" runat="server" Text="Button" onclick="Button1_Click" />
+    </div>
+    </form>
+</body>
+</html>

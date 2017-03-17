@@ -1,0 +1,277 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Admin Panel {Taste Club}</title>
+<link href="css_ad/style_ad.css" type="text/css" rel="stylesheet" />
+
+<script src="SpryAssets_ad/SpryMenuBar.js" type="text/javascript"></script>
+<link href="SpryAssets_ad/SpryMenuBarHorizontal_ad.css" rel="stylesheet" type="text/css" />
+
+ 
+</head>
+
+<body >
+<form id="form1" runat="server">
+<div class="header_top_wrapper">
+<div class="header_top_wrapper2">
+<p>Reasonable Web Designing Packges in India</p>
+
+<p style="padding-left:65px; width:284px;"><img src="css_ad/img_ad/phone-icon2.png" />+91-1666-224455</p>
+
+
+<div class="header_top_wrapper_sub">
+<a href="../index.aspx">Back To Website</a>
+</div>
+<div class="header_top_wrapper_sub">
+<asp:Label ID="lblName" runat="server" Text="Welcome Taste Club" ForeColor="White"></asp:Label>
+</div>
+
+</div>
+
+</div>
+
+
+<div id="Wapper">
+<div class="cantant">
+<div class="cantant_left">
+<img src="css_ad/img_ad/contant2.png"  class="cantant_left_logo_img"/>
+
+<div class="cantant_left_sub">
+<a href="http://shrisatyait.com/web_designing.aspx">
+<img src="css_ad/img_ad/ser1.png" class="cantant_left_sub_img"/></a>
+<a href="http://shrisatyait.com/maintenance.aspx">
+<img src="css_ad/img_ad/ser2.png" class="cantant_left_sub_img"/></a>
+<a href="http://shrisatyait.com/software.aspx">
+<img src="css_ad/img_ad/ser3.png" class="cantant_left_sub_img"/></a>
+<a href="http://shrisatyait.com/web_development.aspx">
+<img src="css_ad/img_ad/ser4.png" class="cantant_left_sub_img"/></a>
+<a href="http://shrisatyait.com/logo_design.aspx">
+<img src="css_ad/img_ad/ser5.png" class="cantant_left_sub_img"/></a>
+<a href="http://shrisatyait.com/online_ads.aspx">
+<img src="css_ad/img_ad/ser6.png" class="cantant_left_sub_img"/></a>
+</div>
+</div>
+
+
+
+<div class="cantant_right">
+<div class="header_top">
+<div class="slider">
+<img src="css_ad/img_ad/logo.png" />
+</div>
+
+
+
+<div class="navigation">
+  <ul id="MenuBar1" class="MenuBarHorizontal">
+    <li><a class="MenuBarItemSubmenu" href="#">Master</a>
+      <ul>
+        <li><a href="#">User</a>
+        <ul>
+        <li><a href="add_ad.aspx">Add</a></li>
+        <li><a href="del_up_ad.aspx">Update/Delete</a></li>
+        </ul>
+        </li>
+        <li><a href="change_password.aspx">Change Password</a></li>
+         
+        
+       
+        
+      </ul>
+
+    </li>
+
+     <li><a  href="#">Event</a>
+     <ul>
+        <li><a href="#">Add Image</a>
+        <ul>
+        <li><a href="add-food-image.aspx">Add Food</a></li>
+         <li><a href="update-food-image.aspx">Update/Delete Food</a></li>
+        <li><a href="beverages.aspx">Add Beverages</a></li>
+         <li><a href="update-beverages-image.aspx">Update/Delete Beverages</a></li>
+       
+        </ul>
+        </li>
+       <%-- <li><a href="#">Event</a>
+        <ul>
+        <li><a href="event_add_ad.aspx">Add</a></li>
+        <li><a href="event_up_del_ad.aspx">Update/Delete</a></li>
+        </ul>
+        </li>--%>
+       
+        
+      </ul>
+
+     
+
+      </li>
+
+    <li ><a class="MenuBarItemSubmenu" href="#">Feedback</a>
+      <ul>
+                        <li><a  href="outercityorder.aspx" class="MenuBarItemSubmenu" style="padding:5px; width:130px;">Check Order From Out Of city</a>
+                        </li>
+       
+          
+                        <%--<li><a  href="web_development.html" style="padding:5px;">Hosting</a></li>
+                        <li><a href="software_mainteness.html" style="padding:5px;">Website </a></li>
+                        <li><a href="maintenness.html" style="padding:5px;">Software</a></li>--%>
+                       
+           </ul>
+           </li>
+    <%--</li>--%>
+    <li ><a class="MenuBarItemSubmenu" href="#" target="_blank">Webmail</a>
+      <%--<ul>
+        <li><a href="#">New Ticket</a></li>
+        <li><a href="#">Old Ticket</a></li>
+      </ul>--%>
+    </li>
+    
+      
+    
+    <li ><a href="admin%20Panel.aspx">Log Out</a>
+   
+       
+    </li>
+    
+        <li ><a href="orderfor.aspx">Orders</a>
+
+  </ul>
+  <script type="text/javascript">
+      var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", { imgDown: "../../SpryAssets/SpryMenuBarDownHover.gif", imgRight: "../../SpryAssets/SpryMenuBarRightHover.gif" });
+</script>
+</div><!--navigation-->
+</div><!--header_top-->
+
+<asp:ContentPlaceHolder id="head" runat="server">
+
+
+    </asp:ContentPlaceHolder>
+
+<%--<div class="cantant_right_text">
+
+<h1>sfgsdf</h1>
+
+<h2>sfgsdf</h2>
+
+</div>
+--%>
+
+</div><!--cantant_right-->
+</div><!--cantant-->
+</div><!--Wapper-->
+
+<div class="navi_div2">
+ <div class="navi_div2_sub">
+ <img src="css_ad/img_ad/sasttaprint_logo.png" />
+ <img src="css_ad/img_ad/kailsh_tyr_logo.png" />
+ <img src="css_ad/img_ad/shri_santoshi_logo.png" />
+ <img src="css_ad/img_ad/naamdhari_logo.png" />
+ 
+ </div>                                  
+</div>
+
+
+<div class="footer_bottom_div">
+<div class="footer_bottom_div_sub">
+<div class="footer_bottom_div_sub_inner">
+<h1>About Us</h1>
+<ul>
+<li><a href="http://shrisatyait.com/about_us.aspx"> Company Profile</a></li>
+<li><a href="http://shrisatyait.com/testimonials.aspx">Testimonials</a></li>
+<li><a href="http://shrisatyait.com/portfolio.aspx">Portfolio</a></li>
+</ul>
+</div>
+
+<div class="footer_bottom_div_sub_inner">
+<h1>Service We Provide</h1>
+<ul>
+<li><a href="http://shrisatyait.com/web_designing.aspx"> Web Designing</a></li>
+<li><a href="http://shrisatyait.com/web_development.aspx">Web Development</a></li>
+<li><a href="http://shrisatyait.com/software.aspx">Software Development</a></li>
+<li><a href="http://shrisatyait.com/maintenance.aspx">Mantenance Services</a></li>
+<li><a href="http://shrisatyait.com/online_ads.aspx">Online Advertisement</a></li> 
+<li><a href="http://shrisatyait.com/logo_design.aspx">Logo Designing</a></li> 
+</ul>
+</div>
+
+<div class="footer_bottom_div_sub_inner">
+<h1>Our Products</h1>
+<ul>
+<li><a href="http://shrisatyait.com/gurukul_pro.aspx">Gurukul Pro</a></li>
+<li><a href="http://shrisatyait.com/gurukul_online_plan.aspx">Gurukul Online</a></li>
+</ul>
+</div>
+
+
+<div class="footer_bottom_div_sub_inner">
+<h1>Support</h1>
+<ul>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="http://shrisatyait.com/clint_login.aspx">Support Tickets</a></li>
+<li><a href="http://shrisatyait.com/feedbak.aspx">Online Feedback</a></li>
+<li><a href="http://shrisatyait.com/clint_login.aspx">Client Area</a></li>
+<li><a href="http://shrisatyait.com/contact_us.aspx">Contact Us</a></li>
+</ul>
+</div>
+
+<div class="footer_bottom_div_sub_inner2">
+<h1>Our Social Network</h1>
+<ul>
+<li style="list-style-type:none"><a href="https://www.facebook.com/shrisatyait"><img src="css_ad/img_ad/facebook.png" />Facebook</a></li>
+<li style="list-style-type:none"><a href="https://plus.google.com/u/0/102778623219213578488/posts"><img src="css_ad/img_ad/google_febak.png" />Google Plus</a></li>
+<li style="list-style-type:none"><a href="https://twitter.com/ShriSatyaIT"><img src="css_ad/img_ad/twitter_feedbakc.png" />Twitter</a></li>
+<li style="list-style-type:none"><a href="http://www.linkedin.com/company/shri-satya-technologies?trk=cp_followed_name_shri-satya-technologies"><img src="css_ad/img_ad/linked.png" />Linked In</a></li>
+
+</ul>
+</div>
+</div>
+
+<div class="footer_bottom_div_sub_last2">
+<ul>
+<li><a href="http://shrisatyait.com/web_designing.aspx"> Web Designing</a> | </li><li><a href="http://shrisatyait.com/web_development.aspx">Web Development</a> | </li><li><a href="http://shrisatyait.com/software.aspx">Software Development</a> | </li>
+<li><a href="http://shrisatyait.com/maintenance.aspx">Mantenance Services</a> | </li><li><a href="http://shrisatyait.com/online_ads.aspx">Online Advertisement</a> | </li> <li><a href="http://shrisatyait.com/logo_design.aspx">Logo Designing</a> | </li> 
+<li><a href="http://shrisatyait.com/gurukul_pro.aspx">Gurukul</a> | </li> <li><a href="http://shrisatyait.com/contact_us.aspx">Contact Us</a> </li> 
+</ul>
+</div>
+
+
+
+<div class="footer_bottom_div_sub_last3">
+<ul>
+<li><a href="http://shrisatyait.com/web_designing.aspx">Web Designing</a> | </li>
+<li><a href="http://shrisatyait.com/web_development.aspx">Web Development</a> | </li>
+<li><a href="http://shrisatyait.com/software.aspx">Software Development</a> | </li>
+<li><a href="http://shrisatyait.com/maintenance.aspx">Mantenance Services</a> | </li>
+<li><a href="http://shrisatyait.com/online_ads.aspx">Online Advertisement</a> | </li>
+<li><a href="http://shrisatyait.com/logo_design.aspx">Logo Designing</a> | </li>
+<li><a href="#">Domain Name</a> | </li>
+<li><a href="#">Hosting</a> | </li>
+<li><a href="http://shrisatyait.com/static_web.aspx">static Website</a> | </li>
+<li><a href="http://shrisatyait.com/flash_web.aspx">Flash</a> | </li>
+<li><a href="http://shrisatyait.com/dynamic_web.aspx">Dynamic Website</a> | </li>
+<li><a href="http://shrisatyait.com/software.aspx">Customized Software</a> | </li>
+<li><a href="http://shrisatyait.com/online_ads.aspx">SEO</a> | </li>
+<li><a href="http://shrisatyait.com/online_ads.aspx">SMO</a> | </li>
+<li><a href="https://www.facebook.com/shrisatyait">Social Network</a> | </li>
+<li><a href="http://shrisatyait.com/flash_web.aspx">Flash Website</a> | </li>
+<li><a href="http://shrisatyait.com/online_ads.aspx">Social Media Optimization</a> | </li>
+<li><a href="http://shrisatyait.com/online_ads.aspx">Search Engine Optimization</a>  </li>
+
+
+
+</ul>
+
+</div>
+
+<div class="footer_bottom_div_sub_last4">
+<h3>Copy Rights &copy; 2014 | <a href="http://shrisatyait.com">SHRI SATYA TECHNOLOGIES</a> | All Rights Resesved</h3>
+</div>
+
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
+
+public partial class order : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        lbname.Text=Session["s"].ToString();
+
+        if (!IsPostBack)
+        {
+            drop();
+            get();
+        }
+    }
+
+    private void get()
+    { 
+        SqlConnection con1 = new SqlConnection(ConfigurationManager.ConnectionStrings["sst"].ToString());
+        con1.Open();
+        SqlCommand cmd = new SqlCommand("select email from login where fstname='"+lbname.Text+"'", con1);
+        SqlDataReader dr = cmd.ExecuteReader();
+        if (dr.Read())
+        { 
+            lbemail.Text=dr[0].ToString();
+            con1.Close();
+        }
+    }
+
+    private void drop()
+    {
+
+        SqlConnection con1 = new SqlConnection(ConfigurationManager.ConnectionStrings["sst"].ToString());
+        con1.Open();
+        //SqlCommand cmd = new SqlCommand();
+        // SqlDataReader dr = cmd.ExecuteReader();
+        //if (dr.Read())
+        //{
+        SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM food_order where fstname='" + lbname.Text + "' AND email='ankitmehta@23.com' ", con1);
+        // da.SelectCommand = cmd;
+        DataSet ds = new DataSet();
+        da.Fill(ds);
+        GridView1.DataSource = ds;
+
+        GridView1.DataBind();
+        con1.Close();
+        //}
+        //else
+        //{
+        //    lbnorecord.Text = "No Active Group Orders Found.";
+        //    lbnorecord.ForeColor = System.Drawing.Color.Green;
+
+        //}
+
+    }
+
+
+}

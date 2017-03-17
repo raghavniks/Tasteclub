@@ -1,0 +1,83 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
+using System.Net.Mail;
+using System.IO;
+
+public partial class forgot : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        
+       
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sst"].ToString());
+        con.Open();
+        SqlCommand cmd = new SqlCommand("select * from login where email='" + TextBox1.Text + "'", con);
+        SqlDataReader dr = cmd.ExecuteReader();
+        if (dr.Read())
+        {
+            string name=dr["fstname"].ToString();
+            string snm = dr["email"].ToString();
+            
+            string body = this.PopulateBody(name,
+          "Click Here to Reset Your Password",
+          "http://www.tasteclub/reset_password.aspx?n="+snm+"",
+          "");
+
+            //"Here Mudassar Ahmed Khan has explained how to fetch multiple column values i.e." +
+            //" ID and Text values in the ASP.Net AJAX Control Toolkit AutocompleteExtender"
+            //+ "and also how to fetch the select text and value server side on postback");
+            this.SendHtmlFormattedEmail(TextBox1.Text, "You requested a new TASTE Club password", body);
+            Label3.Text = "A password reset email was sent to rajbatra05@gmail.com.";
+            TextBox1.Text = "";
+        }
+       
+       
+    }
+
+    private string PopulateBody(string userName, string title, string url, string description)
+    {
+        string body = string.Empty;
+        using (StreamReader reader = new StreamReader(Server.MapPath("~/EmailTemplate.htm")))
+        {
+            body = reader.ReadToEnd();
+        }
+        body = body.Replace("{UserName}", userName);
+        body = body.Replace("{Title}", title);
+        body = body.Replace("{Url}", url);
+        body = body.Replace("{Description}", description);
+        return body;
+    }
+
+    private void SendHtmlFormattedEmail(string recepientEmail, string subject, string body)
+    {
+        using (MailMessage mailMessage = new MailMessage())
+        {
+            mailMessage.From = new MailAddress(ConfigurationManager.AppSettings["UserName"]);
+
+            mailMessage.Subject = subject;
+            mailMessage.Body = body;
+            mailMessage.IsBodyHtml = true;
+            mailMessage.To.Add(new MailAddress(recepientEmail));
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = ConfigurationManager.AppSettings["Host"];
+            smtp.EnableSsl = Convert.ToBoolean(ConfigurationManager.AppSettings["EnableSsl"]);
+            System.Net.NetworkCredential NetworkCred = new System.Net.NetworkCredential();
+            NetworkCred.UserName = ConfigurationManager.AppSettings["UserName"];
+            NetworkCred.Password = ConfigurationManager.AppSettings["Password"];
+            smtp.UseDefaultCredentials = true;
+            smtp.Credentials = NetworkCred;
+            smtp.Port = int.Parse(ConfigurationManager.AppSettings["Port"]);
+            smtp.Send(mailMessage);
+        }
+    }
+}

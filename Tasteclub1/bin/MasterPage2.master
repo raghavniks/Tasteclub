@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+    <%--<script type = "text/javascript" >
+        function preventBack() { window.history.forward(); }
+        setTimeout("preventBack()", 0);
+        window.onunload = function () { null };
+    </script>--%>
+    <%-- <script type ="text/javascript">
+
+         window.onload = window.history.forward(0);  
+    
+    </script>--%>
+        <script language="javascript" type="text/javascript">
+            function DisableBackButton() {
+                window.history.forward();
+            }
+            setTimeout("DisableBackButton()", 0);
+            window.onunload = function () { null }
+        </script>
+
+    <style type="text/css">
+        .login{ width:225px; height:25px; float:right; margin-top:15px;}
+        .login a{color:Black; text-decoration:none; margin-right:10px; margin-left:5px;}
+        .login a:hover{color:Red;}
+        .style1
+        {
+            color: #990000;
+            font-family: "Times New Roman", Times, serif;
+            font-size: large;
+        }
+        .style1 a{color:Maroon; text-decoration:none;}
+        
+        </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="width:auto; height:900px;">
+    <div style="height:70px;">
+    <div style="float:left; width:351px; height:70px;">
+         <a href="index.aspx"><img src="img/logo.png" style=" height:200px; width:150px; margin-left:5px;"/></a>
+    </div>
+    <div class="login" style="font-weight:bold; font-size:17px;">
+       
+        <a href="login.aspx">Login</a>|
+         <a href="signup.aspx">Register</a>
+    </div>
+    </div>
+    <div style="height:900px; background-color:#f0f0f0;">
+        <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+        <div style="float:left; margin-top:50px; width:600px;"><img src="img/123.jpg" style="width:600px; height:800px;"/></div>
+        <div>
+        
+        </div>
+    </div>
+    <div id="header_bot">
+<div id="header_bot_main_met" style="height:58px;">
+<p><b>Questions?</b>  <b>Email Us</b>  Call Us <b>+91-123-456-7890</b> (M-F 9AM - 6PM)  <a href="#"><img src="img/1406225452_facebook.png" /></a></p>
+
+<div id="header_bot_main_botf">
+<p><a href="about_us.aspx">About Us</a> <a href="#"> Careers </a> <a href="#"> Contact Us </a> <a href="#"> Tasteclub for Restaurants</a> <a href="#"> FAQ</a> <a href="#"> Terms </a> <a href="#">Suggestion Box </a></p>
+</div>
+
+</div> 
+</div>
+    <div id="fotter_bottom_main" style="height:120px;">
+<div id="fotter_bottom">
+<p style="width:60%; ">ALL RIGHTS RESERVED  | COPYRIGHTS &copy; 2014 | <a href="home.aspx">TasteClub</a></p>
+
+    
+<p style="float:right; font-size:14px;">Design by: <a href="http://shrisatyait.com/">Shri Satya Technologies</a></p>
+</div>
+</div>
+<script type="text/javascript">
+    var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", { imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif" });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).scroll(function () {
+            var scroll = $(this).scrollTop();
+            var topDist = $("#container").position();
+            if (scroll > topDist.top) {
+                $('#header_rihgt_bottom_main').css({ "position": "fixed", "top": "0" });
+            } else {
+                $('#header_rihgt_bottom_main').css({ "position": "static", "top": "auto" });
+            }
+        });
+    });
+</script>
+    </div>
+    </form>
+</body>
+</html>
+ 

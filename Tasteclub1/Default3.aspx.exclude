@@ -1,0 +1,192 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage3.master" AutoEventWireup="true" CodeFile="Default3.aspx.cs" Inherits="Default3" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<div style="width:1000px; overflow:hidden; margin:136px auto 6px; height:auto; background-color:White; padding-bottom:20px;">
+     <div style="height:72px; width:1000px; background-color: #fffbb9;">
+     <div style="width: 290px; float: left; padding: 24px;"> 
+     <div><a href="" style="color: #45c3d3; text-decoration: none; float: left; font-size: 21px; margin-right:20px;">Edit</a></div>
+        <div style="font-size: 18px;">Pay Using Your Credit Card</div></div>
+       
+        <div style="float: right; padding: 15px;">
+            <asp:Button ID="Button1" runat="server" Text="PLACE ORDER" style="color:White; font-size: 20px; height: 42px; width: 291px; border: none; border-radius: 5px; background-color: #F05033;"/>
+        </div>
+     </div>
+     <div class="text">
+        <asp:Panel ID="Panel1" runat="server">
+<div style="margin-top:7px; padding:10px; font-size:17px;">
+    Thank you, the credit in your account will be applied to this group order. We still need a credit card authorization in case your final order exceeds your credit balance at the time of delivery, but you will see no charge if your credit balance suffices.
+</div>
+<div>
+    <span><b style="font-size:20px; padding-left:10px; padding-bottom:10px;  ">Payment Info</b> </span>
+</div>
+  <div id ="frmError" runat="server">
+      <span style="color:red">Please fill all mandatory fields.</span>
+      <br/>
+      <br/>
+      </div>
+      
+    
+   <input type="hidden" runat="server" id="key" name="key" />
+      <input type="hidden" runat="server" id="hash" name="hash"  />
+            <input type="hidden" runat="server" id="txnid" name="txnid" />
+             <input type="hidden" runat="server" id="enforce_paymethod" name="enforce_paymethod" />
+      <table>
+        <tr>
+          <td><b>Mandatory Parameters</b></td>
+        </tr>
+        <tr>
+          <td>Amount: </td>
+          <td>
+          <asp:TextBox ID="amount" runat="server"  /></td>
+          <td>First Name: </td>
+          <td>
+           <asp:TextBox ID="firstname" runat="server" /></td>
+        </tr>
+        <tr>
+          <td>Email: </td>
+          <td>
+           <asp:TextBox ID="email" runat="server" /></td>
+          <td>Phone: </td>
+          <td>
+          <asp:TextBox ID="phone" runat="server" /></td>
+        </tr>
+        <tr>
+          <td>Product Info: </td>
+          <td colspan="3">
+          <asp:TextBox ID="productinfo" runat="server" /></td>
+        </tr>
+        <tr>
+          <td>Success URI: </td>
+          <td colspan="3">
+          <asp:TextBox ID="surl" runat="server" /></td>
+        </tr>
+        <tr>
+          <td>Failure URI: </td>
+          <td colspan="3">
+          <asp:TextBox ID="furl" runat="server" /></td>
+        </tr>
+        <tr>
+          <td><b>Optional Parameters</b></td>
+        </tr>
+        <tr>
+          <td>Last Name: </td>
+          <td>
+          <asp:TextBox ID="lastname" runat="server" /></td>
+          <td>Cancel URI: </td>
+          <td>
+           <asp:TextBox ID="curl" runat="server" /></td>
+         
+        </tr>
+        <tr>
+          <td>Address1: </td>
+          <td>
+            <asp:TextBox ID="address1" runat="server" /></td>
+          <td>Address2: </td>
+          <td>
+          <asp:TextBox ID="address2" runat="server" /></td>
+        </tr>
+        <tr>
+          <td>City: </td>
+          <td>
+          <asp:TextBox ID="city" runat="server" /></td>
+          <td>State: </td>
+          <td>
+          <asp:TextBox ID="state" runat="server" /></td>
+        </tr>
+        <tr>
+          <td>Country: </td>
+          <td>
+          <asp:TextBox ID="country" runat="server" /></td>
+          <td>Zipcode: </td>
+          <td>
+            <asp:TextBox ID="zipcode" runat="server" /></td>
+        </tr>
+        <tr>
+          <td>UDF1: </td>
+          <td>
+           <asp:TextBox ID="udf1" runat="server" /></td>
+          <td>UDF2: </td>
+          <td>
+           <asp:TextBox ID="udf2" runat="server" /></td>
+        </tr>
+        <tr>
+          <td>UDF3: </td>
+          <td>
+           <asp:TextBox ID="udf3" runat="server" /></td>
+          <td>UDF4: </td>
+          <td>
+           <asp:TextBox ID="udf4" runat="server" /></td>
+        </tr>
+        <tr>
+          <td>UDF5: </td>
+          <td>
+           <asp:TextBox ID="udf5" runat="server" /></td>
+          <td>PG: </td>
+          <td>
+           <asp:TextBox ID="pg" runat="server" /></td>
+        </tr>
+		<tr>
+		<td>Service Provider: </td>
+          <td>
+           <asp:TextBox ID="service_provider" runat="server" Text="payu_paisa"/></td>
+		</tr>
+        <tr>
+        
+            <td colspan="4"></td>
+            
+        </tr>
+      </table>
+     <br />
+      <asp:Button ID="submit" Text="submit" Width="100px"  runat="server" OnClick="Button1_Click"  />
+ 
+   
+      <%-- <div style="float:left; margin-left:10px; width:150px; margin-bottom:10px; margin-top:20px;">
+           <asp:CheckBox ID="CheckBox1" runat="server" Text="Save Credit Card"/>
+       </div>--%>
+
+       <%--<table style="float:right; width: 415px;">
+        <tr>
+            <td style="font-size:20px;">
+                Order Summery
+            </td>
+        </tr>
+         <tr>
+            <td style="font-size:18px;">
+                Meeting: My Lunch Meeting
+            </td>
+        </tr>
+         <tr>
+            <td>
+                <asp:Label ID="totalitems" runat="server" Text=""></asp:Label>
+            </td>
+        </tr>
+         <tr>
+            <td>
+                <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+            </td>
+        </tr>
+       </table>--%>
+    </asp:Panel>
+     </div>
+    
+
+
+    
+</div>
+</asp:Content>
+

@@ -1,0 +1,156 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage3.master.cs" Inherits="MasterPage3" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel='icon' type='image/png' href="img/titl-logo.png" />
+<title>Taste Club</title>
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="jcobb-basic-jquery-slider-8ffe118/jcobb-basic-jquery-slider-8ffe118/demo.css">
+   <link rel="stylesheet" href="jcobb-basic-jquery-slider-8ffe118/jcobb-basic-jquery-slider-8ffe118/bjqs.css">
+   <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+   <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<style type="text/css">
+@font-face{ font-family:"SCRIPTBL"; src:url(SCRIPTBL.TTF) format("truetype");
+}
+p.SCRIPTBL{font-family:"SCRIPTBL"; }    
+h1.SCRIPTBL{font-family:"SCRIPTBL"; } 
+a.SCRIPTBL{font-family:"SCRIPTBL"; }    
+
+
+</style>
+
+
+
+
+</head>
+
+<body style="background:#DAD7D7;">
+    <form runat="server" id="F1">
+<div id="header_rihgt_bottom_main" style="height:125px; margin-bottom:6px; position:fixed; top:0px;">
+<div id="header_main2">
+<div id="header_left2">
+<a href="index.aspx"  style="z-index: 1; position: relative; left: 170px;"><img src="img/logo.png" width="150px" height="200px" style="margin-left:5px; float:left;" /></a>
+</div>
+<div id="header_rihgt">
+<div id="header_rihgt_top" style="width:850px;">
+
+<ul id="MenuBar1" class="MenuBarHorizontal">
+  <li><a class="MenuBarItemSubmenu" href="#" style="text-decoration:none; font-weight:bold;">Hi <asp:Label ID="lbname" runat="server" Text=""></asp:Label> </a>
+     
+     <%-- <img src="img/rs.png" height="13px"/>&nbsp;<asp:Label ID="lbcredit" runat="server" Text="0.00"></asp:Label> &nbsp;Credit</a>--%>
+    <ul>
+      <li><a href="invite.aspx">Invite</a></li>
+    <%--  <li><a href="#">Gift Cards</a></li>--%>
+      <li><a href="accounts.aspx">Account</a></li>
+      <%-- <li><a href="index.aspx">Logout</a></li>--%>
+    </ul>
+  </li>
+
+ 
+
+</ul>
+
+
+
+
+<div id="header_rihgt_bottom" style="width:500px;">
+  <ul>
+    
+    <li><a href="new_meting.aspx" >Back to Menu</a></li>
+    <li><a  href="order.aspx" >Order History</a></li>
+    
+   </ul>
+   
+ </div>
+<%-- <p><a href="new_meting.aspx">← To Groups Menu</a></p>--%>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <div style="font-size: 22px;
+font-weight: bold;
+border-radius: 5px;
+color: #fff;
+margin-right: 85px;
+float: right;
+background-color: #f00;
+
+">
+
+
+
+
+
+
+    <asp:Button ID="Button2" runat="server" Text="Log Out" Font-Size="22px"
+           BackColor="Red" BorderStyle="None" ForeColor="White" style="color:White; background-color:Red; border-style:None; font-size:22px; border-radius: 5px; height:50px; width:100px;"
+           onclick="Button2_Click" />
+    </div>
+
+
+</div>
+</div>
+
+
+<asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <div id="header_bot">
+<div id="header_bot_main_met" style="height:58px;">
+<p><b>Questions?</b>  <b>Email Us</b>  Call Us <b>+91-123-456-7890</b> (M-F 9AM - 6PM)  <a href="#"><img src="img/1406225452_facebook.png" /></a></p>
+
+<div id="header_bot_main_botf">
+<p><a href="about_us.aspx">About Us</a> <a href="#"> Careers </a> <a href="#"> Contact Us </a> <a href="#"> Tasteclub for Restaurants</a> <a href="#"> FAQ</a> <a href="#"> Terms </a> <a href="#">Suggestion Box </a></p>
+</div>
+
+</div> 
+</div>
+
+<asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
+    </asp:ContentPlaceHolder>
+<div id="fotter_bottom_main" style="height:120px;">
+<div id="fotter_bottom">
+<p>ALL RIGHTS RESERVED  | COPYRIGHTS &copy; 2014 | <a href="home.aspx">TasteClub</a></p>
+<p style="float:right; font-size:14px;">Design by: <a href="http://shrisatyait.com/">Shri Satya Technologies</a></p>
+</div>
+</div>
+<script type="text/javascript">
+    var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", { imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif" });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).scroll(function () {
+            var scroll = $(this).scrollTop();
+            var topDist = $("#container").position();
+            if (scroll > topDist.top) {
+                $('#header_rihgt_bottom_main').css({ "position": "fixed", "top": "0" });
+            } else {
+                $('#header_rihgt_bottom_main').css({ "position": "static", "top": "auto" });
+            }
+        });
+    });
+</script>
+</form>
+</body>
+</html>
+ 

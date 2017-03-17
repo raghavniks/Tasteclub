@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel='icon' type='image/png' href="img/titl-logo.png" />
+<title>Taste Club</title>
+<link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="jcobb-basic-jquery-slider-8ffe118/jcobb-basic-jquery-slider-8ffe118/demo.css">
+   <link rel="stylesheet" href="jcobb-basic-jquery-slider-8ffe118/jcobb-basic-jquery-slider-8ffe118/bjqs.css">
+
+
+<script src="skdslider/src/jquery.js"></script>
+<script src="skdslider/src/skdslider.js"></script>
+<link href="skdslider/src/skdslider.css" rel="stylesheet">
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery('#demo1').skdslider({ delay: 5000, animationSpeed: 1000, showNextPrev: true, showPlayButton: true, autoSlide: true, animationType: 'sliding' });
+        jQuery('#demo2').skdslider({ delay: 5000, animationSpeed: 1000, showNextPrev: true, showPlayButton: false, autoSlide: true, animationType: 'sliding' });
+        jQuery('#demo3').skdslider({ delay: 5000, animationSpeed: 1000, showNextPrev: true, showPlayButton: true, autoSlide: true, animationType: 'sliding' });
+
+        jQuery('#responsive').change(function () {
+            $('#responsive_wrapper').width(jQuery(this).val());
+        });
+
+    });
+</script>
+<%--<script type ="text/javascript">
+
+    window.onload = window.history.forward(0);  
+    
+</script> --%> 
+    <script language="javascript" type="text/javascript">
+        function DisableBackButton() {
+            window.history.forward();
+        }
+        setTimeout("DisableBackButton()", 0);
+        window.onunload = function () { null }
+</script>
+<style type="text/css">
+@font-face{ font-family:"SCRIPTBL"; src:url(SCRIPTBL.TTF) format("truetype");
+}
+p.SCRIPTBL{font-family:"SCRIPTBL"; }    
+h1.SCRIPTBL{font-family:"SCRIPTBL"; } 
+a.SCRIPTBL{font-family:"SCRIPTBL"; }    
+
+
+</style>
+
+
+
+
+</head>
+
+<body >
+<form runat="server" id="f1">
+<div id="header_rihgt_bottom_main">
+<div id="header_main2">
+<div id="header_left">
+<a href="index.aspx"><img src="img/logo.png" width="250px" height="285px" style="margin-left:-90px;"" /></a>
+</div>
+<div id="header_rihgt" style="width:1260px;">
+<div id="header_rihgt_top">
+<div id="header_rihgt_bottom" style="width:900px;">
+   <ul>
+    <li><a href="menu.aspx" >Our Food</a></li>
+    <li><a href="home.aspx" > How It Works</a></li>
+   </ul>
+   
+   <div id="header_rihgt_sub">
+    <table>
+   <tr>
+    <td>
+        <a href="login.aspx">Login</a>&nbsp&nbsp|&nbsp&nbsp<a href="signup.aspx">Register</a>
+     </td>
+    </tr>
+   </table>
+  <%-- <table>
+   <tr><td>User Name :</td><td><input type="text" style="width:110px;" /></td> <td>Password :</td><td><input type="password" style="width:110px;"/></td><td><a href="new_meting.aspx"><input type="submit" value="login"  /></a></td></tr>
+    <tr><td colspan="2"><a href="user_res.aspx">Fotget Password</a></td><td colspan="2"><a href="user_res.aspx">Singup for New User</a></td> </tr>
+   </table>--%>
+   </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="slider_main">
+
+<img src="skdslider/slides/1.jpg" />
+
+</div>
+
+
+<asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <div id="header_bot">
+<div id="header_bot_main_met" style="height:58px;">
+<p><b>Questions?</b>  <b>Email Us</b>  Call Us <b>+91-123-456-7890</b> (M-F 9AM - 6PM)  <a href="#"><img src="img/1406225452_facebook.png" /></a></p>
+
+<div id="header_bot_main_botf">
+<p><a href="about_us.aspx">About Us</a> <a href="#"> Careers </a> <a href="#"> Contact Us </a> <a href="#"> Taste Club for Restaurants</a> <a href="#"> FAQ</a> <a href="#"> Terms </a> <a href="#">Suggestion Box </a></p>
+</div>
+
+</div> 
+</div>
+
+<div id="fotter_bottom_main">
+<div id="fotter_bottom">
+<p style="width:60%; ">ALL RIGHTS RESERVED  | COPYRIGHTS &copy; 2014 | TasteClub<a href="Admin/admin%20Panel.aspx" style="margin-left:15%">Admin Panel</a></p>
+<p style="float:right; font-size:14px;">Design by: <a href="http://shrisatyait.com/">Shri Satya Technologies</a></p>
+</div>
+</div>
+
+
+<script type="text/javascript">
+    var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", { imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif" });
+</script>
+
+
+
+
+
+
+</form>
+
+
+</body>
+</html>
